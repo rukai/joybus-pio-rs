@@ -179,12 +179,13 @@ pub struct GamecubeController {
 impl GamecubeController {
     /// Initializes a connection with a gamecube protocol compatible device and
     /// returns a [`GamecubeController`] instance to interact with this connection.
-    /// If None is returned the device is not compatible with the gamecube protocol.
+    /// If Err is returned the device is not compatible with the gamecube protocol.
+    /// Err will contain the JoybusPio which can be reused.
     pub fn try_new(
         mut pio: JoybusPio,
         timer: &Timer,
         delay: &mut Delay,
-    ) -> Option<GamecubeController> {
+    ) -> Result<GamecubeController, JoybusPio> {
         pio.sm.exec_instruction(Instruction {
             operands: InstructionOperands::JMP {
                 condition: pio::JmpCondition::Always,
@@ -235,10 +236,10 @@ impl GamecubeController {
                 delay.delay_us(130);
                 controller.restart_sm_for_read();
             }
-            None => return None,
+            None => return Err(controller.pio),
         }
 
-        Some(controller)
+        Ok(controller)
     }
 
     pub fn wait_for_poll_start(&mut self, timer: &Timer, delay: &mut Delay) {
