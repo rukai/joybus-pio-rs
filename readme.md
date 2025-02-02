@@ -4,6 +4,8 @@ An implementation of the controller side of the joybus protocol for gamecube for
 
 [joybus-pio](https://github.com/JonnyHaystack/joybus-pio) and [haybox](https://github.com/JonnyHaystack/HayBox) were heavily referenced in the implementation.
 
+For an example usage see [rukaibox_firmware](https://github.com/rukai/rukaibox_firmware)
+
 ## Goals
 
 ### Currently implemented
