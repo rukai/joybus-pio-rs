@@ -2,6 +2,11 @@
 name = "joybus-pio"
 version = "0.1.0"
 edition = "2021"
+license = "LGPL-3.0-or-later"
+repository = "https://github.com/rukai/joybus-pio-rs"
+description = "An implementation of the controller side of the joybus protocol for gamecube for the RP2040 chip via its PIO functionality."
+keywords = ["embedded", "rp2040", "PIO", "gamecube", "joybus"]
+categories = ["embedded", "no-std"]
 
 [dependencies]
 cortex-m = "0.7.7"
