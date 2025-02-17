@@ -408,8 +408,8 @@ impl GamecubeInput {
             | if self.dpad_down  { 0b0000_0100 } else { 0 }
             | if self.dpad_up    { 0b0000_1000 } else { 0 }
             | if self.z          { 0b0001_0000 } else { 0 }
-            | if self.l_digital  { 0b0010_0000 } else { 0 }
-            | if self.r_digital  { 0b0100_0000 } else { 0 };
+            | if self.r_digital  { 0b0010_0000 } else { 0 }
+            | if self.l_digital  { 0b0100_0000 } else { 0 };
 
         [
             buttons1,

@@ -10,7 +10,7 @@ For an example usage see [rukaibox_firmware](https://github.com/rukai/rukaibox_f
 
 ### Currently implemented
 
-* Supports gamecube (joybus) controller protocol. (currently only tested on pc <-> gc adapter)
+* Supports gamecube (joybus) controller protocol.
 
 ### Things I would be happy for others to implement
 
